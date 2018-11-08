@@ -34,7 +34,7 @@ const Players = ({players, ajaxStatus}) => {
             </div>
         </div>
     )
-}
+};
 
 export const mapStateToProps = (state, ownProps) => {
 
@@ -44,6 +44,6 @@ export const mapStateToProps = (state, ownProps) => {
         filters:state.filters,
 
     }
-}
+};
 
 export default connect(mapStateToProps)(Players)

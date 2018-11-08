@@ -13,7 +13,7 @@ describe('Filter actions', () => {
         const expectedAction = {
             type: types.FILTER_PLAYERS,
             filters
-        }
+        };
         expect(actions.setFilters(filters)).toEqual(expectedAction);
     })
 })

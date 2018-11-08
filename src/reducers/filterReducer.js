@@ -8,5 +8,4 @@ export default (state = initialState.filters, action) => {
         default:
             return state
     }
-
 }

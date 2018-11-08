@@ -45,7 +45,7 @@ input[type="number"] {
 
     position: absolute;
     bottom: -5px;
-    left:0;
+    left: 0;
 }
 
 @media only screen and (min-width: 480px) {
@@ -61,7 +61,6 @@ input[type="number"] {
         position: relative;
 
     }
-
 
 
     .filter-item:nth-child(3) {

@@ -11,7 +11,7 @@ describe('The players Actions', () => {
 
     afterEach(() => {
         fetchMock.restore()
-    })
+    });
 
     it('should dispatch player fetch actions', () => {
 
@@ -48,9 +48,9 @@ describe('The players Actions', () => {
         const store = mockStore({players: []});
 
         return store.dispatch(actions.getPlayers()).then(() => {
-            // return of async actions
+
             expect(store.getActions()).toEqual(expectedActions)
         })
 
     })
-})
+});

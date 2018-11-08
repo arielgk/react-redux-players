@@ -9,5 +9,4 @@ export default (state = initialState.players, action) => {
         default:
             return state
     }
-
 }

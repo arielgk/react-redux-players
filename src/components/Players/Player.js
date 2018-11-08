@@ -21,5 +21,6 @@ const Player = ({player}) => {
 
         </div>
     )
-}
+};
+
 export default Player;

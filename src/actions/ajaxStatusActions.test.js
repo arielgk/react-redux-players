@@ -13,7 +13,7 @@ describe('Ajax actions', () => {
     it('should create an action to set ajax error', () => {
         const expectedAction = {
             type: types.AJAX_CALL_ERROR,
-        }
+        };
         expect(actions.ajaxCallError()).toEqual(expectedAction);
 
     })

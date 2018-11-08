@@ -4,6 +4,7 @@ import Players, {mapStateToProps} from ".";
 
 
 function setup(ajaxStatus) {
+
     const props = {
         players: [{
             name: 'name',
@@ -17,7 +18,8 @@ function setup(ajaxStatus) {
             dateOfBirth: "1990-11-07",
         }],
         ajaxStatus: ajaxStatus
-    }
+    };
+
     return shallow(<Players.WrappedComponent {...props} />);
 }
 
@@ -29,6 +31,7 @@ describe('The Players component', () => {
         expect(wrapper.find('.modal').length).toBe(0);
 
     });
+
     it('should render modal when loading', () => {
         const wrapper = setup(1);
         expect(wrapper.find('.modal').length).toBe(1);
@@ -52,6 +55,7 @@ describe('The Players component', () => {
         const componentState = mapStateToProps(sampleState, {});
         expect(componentState).toEqual(sampleState);
     });
+
     it("should map the state to props correctly with filters", () => {
 
         const setFilterFn = jest.fn(x=>{return});

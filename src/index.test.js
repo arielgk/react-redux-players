@@ -10,7 +10,7 @@ describe('Root Reducer',()=>{
         expect(store.getState().filters).toEqual({});
     })
 
-})
+});
 
 
 
