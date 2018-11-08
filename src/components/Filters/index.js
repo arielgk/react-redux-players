@@ -30,14 +30,16 @@ class Filters extends React.Component {
 
     onChangeFilter(ev) {
         ev.persist();
+        if (ev.target.name === 'age' && ev.target.value !== '') {
 
-        if (ev.target.name === 'age' && 18 > ev.target.value && ev.target.value !== '' || ev.target.name === 'age' && 40 < ev.target.value && ev.target.value !== '') {
-            this.setState({
-                errors: {
-                    age: 'Age should be between 18 and 40',
-                }
-            })
-            return
+            if (18 > ev.target.value || 40 < ev.target.value) {
+                this.setState({
+                    errors: {
+                        age: 'Age should be between 18 and 40',
+                    }
+                })
+                return
+            }
         }
 
         const cleanFilters = this.clean(Object.assign({}, this.state.filters, {
