@@ -6,7 +6,7 @@ export const getPlayers = () => {
 
     return dispatch => {
         dispatch(beginAjaxCall());
-        return fetch('http://football-players-b31f2.firebaseio.com/players.json')
+        return fetch('https://football-players-b31f2.firebaseio.com/players.json')
             .then(res => res.json())
             .then(body => {
                 dispatch({type: actionTypes.GET_PLAYER_SUCCESS, players: body});
