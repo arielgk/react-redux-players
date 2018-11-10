@@ -3,6 +3,7 @@ import * as actions from './playerActions';
 import fetchMock from 'fetch-mock'
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
+import players from '../constants/mockPlayers';
 
 const middlewares = [thunk]
 const mockStore = configureMockStore(middlewares)
@@ -15,7 +16,7 @@ describe('The players Actions', () => {
 
     it('should dispatch player fetch actions', () => {
 
-        fetchMock.getOnce('http://football-players-b31f2.firebaseio.com/players.json', {
+        fetchMock.getOnce('https://football-players-b31f2.firebaseio.com/players.json', {
             body: [
                 {
                     "contractUntil": "2022-06-30",
@@ -27,7 +28,13 @@ describe('The players Actions', () => {
                 }
             ],
             headers: {'content-type': 'application/json'}
-        })
+        }).catch((err) => {
+                return {
+                    body: players,
+                    headers: {'content-type': 'application/json'}
+                }
+            }
+        )
 
         const expectedActions = [
             {type: types.BEGIN_AJAX_CALL},
