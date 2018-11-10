@@ -25,3 +25,5 @@ yarn-error.log*
 \.idea/
 
 _back/
+
+*.mp4
