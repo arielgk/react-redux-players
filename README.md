@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/arielgk/react-redux-players.svg?branch=develop)](https://travis-ci.org/arielgk/react-redux-players)
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
