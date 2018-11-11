@@ -1,0 +1,29 @@
+image: cypress/base:10
+options:
+  max-time: 10
+
+
+
+pipelines:
+  branches:
+    pipes:
+      - step:
+          name: Install dependencies
+          caches:
+            - npm
+            - cypress
+            - node
+          script:
+            - npm install
+            - npm ci
+            # let's see the environment variables right away
+            - npx @bahmutov/print-env BITBUCKET
+            - npm run ci
+            - npm install -g surge
+            - npm run build
+            - surge build selectors-redux-bb.surge.sh
+
+definitions:
+  caches:
+    npm: $HOME/.npm
+    cypress: $HOME/.cache/Cypress
