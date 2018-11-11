@@ -6,7 +6,7 @@ options:
 
 pipelines:
   branches:
-    pipes:
+    develop:
       - step:
           name: Install dependencies
           caches:
