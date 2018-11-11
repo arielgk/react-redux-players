@@ -16,8 +16,7 @@ pipelines:
           script:
             - npm install
             - npm ci
-            # let's see the environment variables right away
-            - npx @bahmutov/print-env BITBUCKET
+            - npm run test
             - npm run ci
             - npm install -g surge
             - npm run build
