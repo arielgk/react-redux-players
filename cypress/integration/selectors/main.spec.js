@@ -34,13 +34,30 @@ context('Actions', () => {
 
             });
     });
-    it('should filter players by age', () => {
+    it('should give error when an out of range age is entered', () => {
 
-        cy.get('input[type="number"]').type(22);
-        cy.get('.player-container > div')
+        cy.get('input[type="number"]').type(9);
+        cy.get('.error')
             .should(($i) => {
 
-                expect($i).to.have.length(3)
+                expect($i).to.have.length(1)
+
+            });
+        cy.get('input[type="number"]').clear();
+        cy.get('input[type="number"]').type(42);
+        cy.get('.error')
+            .should(($i) => {
+
+                expect($i).to.have.length(1)
+
+            });
+
+        cy.get('input[type="number"]').clear();
+        cy.get('input[type="number"]').type(30);
+        cy.get('.error')
+            .should(($i) => {
+
+                expect($i).to.have.length(0)
 
             });
     });
