@@ -1,6 +1,11 @@
 language: node_js
 node_js:
   - "stable"
+cache:
+  # cache both npm modules and Cypress binary
+  directories:
+    - ~/.npm
+    - ~/.cache
 script:
   - npm test
   - npm run ci
