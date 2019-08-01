@@ -7,10 +7,10 @@
     "enzyme-adapter-react-16": "^1.6.0",
     "fetch-mock": "^7.2.5",
     "node-fetch": "^2.2.1",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
     "react-redux": "^5.1.0",
-    "react-scripts": "2.1.1",
+    "react-scripts": "3.0.1",
     "redux": "^4.0.1",
     "redux-mock-store": "^1.5.3",
     "redux-thunk": "^2.3.0",
@@ -21,7 +21,15 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cypress:version": "cypress version",
+    "cypress:verify": "cypress verify",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:run:record": "cypress run --record",
+    "cypress:run:chrome": "cypress run --browser chrome",
+    "cypress:run:headed": "cypress run --headed",
+    "ci": "start-server-and-test start http://localhost:3000 cypress:run"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -31,5 +39,9 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "cypress": "^3.4.1",
+    "start-server-and-test": "^1.7.9"
+  }
 }

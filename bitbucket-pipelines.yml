@@ -1,0 +1,28 @@
+image: cypress/base:10
+options:
+  max-time: 10
+
+
+
+pipelines:
+  branches:
+    develop:
+      - step:
+          name: Install dependencies
+          caches:
+            - npm
+            - cypress
+            - node
+          script:
+            - npm install
+            - npm ci
+            - npm run test
+            - npm run ci
+            - npm install -g surge
+            - npm run build
+            - surge build selectors-redux-bb.surge.sh
+
+definitions:
+  caches:
+    npm: $HOME/.npm
+    cypress: $HOME/.cache/Cypress
