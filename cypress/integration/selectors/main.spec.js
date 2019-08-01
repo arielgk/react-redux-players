@@ -1,3 +1,9 @@
+import {players} from '../../../src/constants/mockPlayers';
+import {getAge} from "../../../src/selectors/playersSelector";
+
+const getPlayersCountByAge = (age)=> players.filter((p,index)=> getAge(p.dateOfBirth )===age).length;
+
+
 context('Actions', () => {
 
     beforeEach(() => {
@@ -63,8 +69,9 @@ context('Actions', () => {
     });
 
     it('should filter players by multiple filters', () => {
+       let age = getAge('1996-06-28' );
         cy.get('input[type="text"]').type('Joel');
-        cy.get('input[type="number"]').type(22);
+        cy.get('input[type="number"]').type(age);
         cy.get('select').select('Keeper')
         cy.get('.player-container > div')
             .should(($i) => {
@@ -75,8 +82,10 @@ context('Actions', () => {
     });
 
     it('should filter players by multiple filters repeat', () => {
+        let age = getAge('1996-06-28' );
+
         cy.get('input[type="text"]').type('Joel');
-        cy.get('input[type="number"]').type(22);
+        cy.get('input[type="number"]').type(age);
         cy.get('select').select('Keeper')
 
         cy.get('.player-container > div')
@@ -91,7 +100,7 @@ context('Actions', () => {
         cy.get('.player-container > div')
             .should(($i) => {
 
-                expect($i).to.have.length(3)
+                expect($i).to.have.length(getPlayersCountByAge(age)+1)
 
             });
 
