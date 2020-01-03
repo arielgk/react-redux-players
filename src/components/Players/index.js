@@ -37,7 +37,6 @@ const Players = ({players, ajaxStatus}) => {
 };
 
 export const mapStateToProps = (state, ownProps) => {
-
     return {
         players: getPlayersFiltered(state),
         ajaxStatus: state.ajaxStatus,

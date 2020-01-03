@@ -67,12 +67,12 @@ describe('The Players component', () => {
                 "jerseyNumber": 1,
                 "name": "David de Gea",
                 "nationality": "Spain",
-                "position": "Keeper"
+                "position": "position"
             }],
             ajaxStatus: 0,
             filters:{
                 name:"david",
-                age:'28'
+                position:'position'
             },
             actions:{
                 setFilters:setFilterFn,
