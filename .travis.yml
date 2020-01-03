@@ -15,3 +15,7 @@ deploy:
     branch: develop
 on:
   branch: develop
+addons:
+  apt:
+    packages:
+      - libgconf-2-4
